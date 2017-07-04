@@ -56,6 +56,7 @@ func MessageFetch(url string) {
 func main() {
 	var url="";
 	MessageFetch(url)
+	fmt.Println("test")
 }
 
 
