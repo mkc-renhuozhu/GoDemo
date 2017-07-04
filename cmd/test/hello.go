@@ -89,7 +89,6 @@ Slice()
     var tt=&ba{1,qa{2}}
     fmt.Println(tt)
 
-fmt.Println("test new commit for merge")
 }
 
 type number struct {

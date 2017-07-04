@@ -12,7 +12,6 @@ type Customer struct {
 //2.类型等价定义
 type str string
 
-
 //3.定义接口类型
 
 type operation interface {
