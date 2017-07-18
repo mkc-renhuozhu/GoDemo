@@ -98,6 +98,8 @@ func main() {
 		}
 		time.Sleep(time.Second*5)
 	}
+
+	//add commit log step 1:
 }
 
 
