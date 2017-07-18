@@ -100,6 +100,7 @@ func main() {
 	}
 
 	//add commit log step 1:
+	// add commit log step 2:
 }
 
 
