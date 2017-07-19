@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"strings"
 	"encoding/json"
+	"time"
+	"strconv"
 )
 
 func Get(url string) {
@@ -61,10 +63,52 @@ func MessageFetch(url string) {
 	fmt.Println(string(resBody))
 }
 
+func CreateHeartBeat(url string,sessionId string){
+	var param = &struct {
+		ClientId string `json:"clientId"`
+		Id string `json:"id"`
+		SessionId string `json:"sessionId"`
+	}{}
+
+	//param.ClientId = "e22e91c8-5d66-4909-ac12-89df872493ea"
+	param.ClientId = "220dbb33-f74b-44f7-b669-f01ae1e3c684"
+	param.Id="59"
+	param.SessionId=sessionId
+
+	body, _ := json.Marshal(param)
+	req, err := http.NewRequest("POST", url, strings.NewReader(string(body)))
+	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("access_token","ds")
+	if err!=nil{
+		fmt.Println(err)
+	}
+	resp, err := http.DefaultClient.Do(req)
+
+	defer resp.Body.Close()
+	resBody, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		// handle error
+		fmt.Println(err)
+	}
+
+	fmt.Println(string(resBody))
+
+}
+
 func main() {
-	var url=""
-	Get(url)
-	fmt.Println("test")
+
+	var url = ""
+
+	for j := 0; j < 2; j++ {
+		for i := 0;i<2;i++{
+			sessionId:="testSession_"+strconv.Itoa(i)
+			CreateHeartBeat(url,sessionId)
+		}
+		time.Sleep(time.Second*5)
+	}
+
+	//add commit log step 1:
+	// add commit log step 2:
 }
 
 type Message struct {
