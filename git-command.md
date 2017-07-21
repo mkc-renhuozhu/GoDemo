@@ -6,6 +6,16 @@
 
 * remote repository : origin
 
+#### 2.1创建一个本地仓储然后推送到git上面
+
+* git init localReposiroty--这是一个本地的文件夹或者说是一个已经新建好了的本地项目
+
+* 在git上面创建一个名称为localReposiroty这个的Repository
+
+* git remote add localReposiroty https://github.com/mkc-renhuozhu/localReposiroty.git
+
+* git push --set-upstream localReposiroty master
+
 ### 2.branch 分支
 
 #### 2.1 创建一个名称为branch1的分支
