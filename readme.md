@@ -10,3 +10,4 @@ type
 error
 
 [git command:](git-command.md)
+[jenkins doc:](jenkins.md)
