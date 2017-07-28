@@ -2,8 +2,6 @@
 
 ### 1.repository  仓储
 
-* client repository :  HEAD
-
 * remote repository : origin
 
 #### 2.1创建一个本地仓储然后推送到git上面
@@ -89,3 +87,9 @@
 #### 查看当前branch的log
 
 * git log
+
+
+
+HEAD 指的是最新的commit
+
+因此  git reset --hart  HEAD  指的就是回滚到当前最新的代码
